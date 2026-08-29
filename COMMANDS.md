@@ -66,8 +66,10 @@ A member's most recent response replaces their previous response.
 
 ---
 
-#/say
+### `/say`
 
+Tatyana will repeat what you say through the command while deleting the original command message sent
+<img width="729" height="247" alt="image" src="https://github.com/user-attachments/assets/c5a575dd-6897-4bee-a71f-3a311a214128" />
 
 
 ---
