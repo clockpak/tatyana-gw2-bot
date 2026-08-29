@@ -72,7 +72,6 @@ Tatyana will repeat what you say through the command while deleting the original
 
 <img width="729" height="247" alt="image" src="https://github.com/user-attachments/assets/c5a575dd-6897-4bee-a71f-3a311a214128" />
 
-
 ---
 
 ## Permissions
@@ -80,6 +79,8 @@ Tatyana will repeat what you say through the command while deleting the original
 Tatyana is intended to be used by small, casual Guild Wars 2 communities.
 
 Certain administrative commands may be restricted to designated guild roles, while regular members can still respond to Guild Mission polls.
+
+<img width="673" height="188" alt="image" src="https://github.com/user-attachments/assets/6a426cfa-44e8-43a7-ac76-ac1fabcdad6c" />
 
 ---
 
