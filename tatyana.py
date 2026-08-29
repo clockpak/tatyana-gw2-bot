@@ -33,8 +33,10 @@ tree = app_commands.CommandTree(bot)
 # Anyone with ANY of these roles can use them.
 
 ALLOWED_ROLES = [
-    "Guild Leader",
-    "Officer",
+    "Mentally ill CEO (Guild leader)"
+    "Mentally ill officer (Guild officer)"
+    "Mentally ill captain (captain)",
+    "Mentally ill veteran (Veteran)",
 ]
 
 
