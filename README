@@ -1,0 +1,27 @@
+# Tatyana
+
+A Discord bot for Guild Wars 2 guild mission coordination.
+
+## Features
+
+- Guild Mission interest polls
+- Interested / Maybe / Can't Attend responses
+- Attendance tracking
+- Mission dates and times in AWST
+- Guild mission type and difficulty
+- Guild Favor and Commendation tracking
+- Persistent mission data
+
+## Requirements
+
+- Python 3.14+
+- discord.py
+- python-dotenv
+
+## Setup
+
+1. Clone the repository
+2. Install dependencies
+3. Create a `.env` file
+4. Add your Discord bot token
+5. Run `tatyana.py`
