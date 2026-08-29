@@ -24,12 +24,12 @@ A Discord bot for Guild Wars 2 guild mission coordination.
 2. Install the required dependencies
 3. Paste your Discord server ID into GUILD_ID =
 4. Create a `.env` file
-5. Add your Discord bot token to the `.env` file as `DISCORD_TOKEN`
+5. Add your Discord bot token to the `.env` file as `DISCORD_TOKEN=`
 6. Run `tatyana.py`
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License. See the (LICENSE) file for details.
 
 ## Disclaimer
 
