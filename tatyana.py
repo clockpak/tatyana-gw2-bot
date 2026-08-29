@@ -24,6 +24,57 @@ tree = app_commands.CommandTree(bot)
 
 
 # ============================================================
+# ROLE PERMISSIONS
+# ============================================================
+
+# Add the Discord role names that should be allowed
+# to use restricted bot commands.
+#
+# Anyone with ANY of these roles can use them.
+
+ALLOWED_ROLES = [
+    "Guild Leader",
+    "Officer",
+]
+
+
+def has_allowed_role(interaction: discord.Interaction) -> bool:
+    """Check whether the user has one of the allowed roles."""
+
+    # Server owner always has permission
+    if interaction.guild and interaction.user.id == interaction.guild.owner_id:
+        return True
+
+    # Make sure this is a guild member
+    if not isinstance(interaction.user, discord.Member):
+        return False
+
+    # Check the member's roles
+    user_roles = {role.name for role in interaction.user.roles}
+
+    return bool(user_roles.intersection(ALLOWED_ROLES))
+
+
+async def check_permissions(interaction: discord.Interaction) -> bool:
+    """
+    Check whether the user is allowed to use a restricted command.
+
+    Returns True if allowed.
+    Returns False and sends an error message if not.
+    """
+
+    if has_allowed_role(interaction):
+        return True
+
+    await interaction.response.send_message(
+        "❌ You don't have permission to use this command.",
+        ephemeral=True
+    )
+
+    return False
+
+
+# ============================================================
 # DATA STORAGE
 # ============================================================
 
@@ -308,6 +359,39 @@ async def on_ready():
 
 
 # ============================================================
+# /SAY
+# ============================================================
+
+@tree.command(
+    name="say",
+    description="Make Tatyana say something",
+    guild=GUILD
+)
+@app_commands.describe(
+    message="What you want Tatyana to say"
+)
+async def say(
+    interaction: discord.Interaction,
+    message: str
+):
+
+    # Check permissions
+    if not await check_permissions(interaction):
+        return
+
+    # Acknowledge the command privately first
+    await interaction.response.send_message(
+        "✅ Sent!",
+        ephemeral=True
+    )
+
+    # Send the actual message as the bot
+    await interaction.channel.send(
+        message
+    )
+
+
+# ============================================================
 # /MISSION
 # ============================================================
 
@@ -341,6 +425,10 @@ async def mission(
     title: str = "Guild Mission Interest Check",
     notes: str = ""
 ):
+
+    # Check permissions
+    if not await check_permissions(interaction):
+        return
 
     global current_mission
 
