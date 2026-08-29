@@ -66,6 +66,12 @@ A member's most recent response replaces their previous response.
 
 ---
 
+#/say
+
+
+
+---
+
 ## Permissions
 
 Tatyana is intended to be used by small, casual Guild Wars 2 communities.
