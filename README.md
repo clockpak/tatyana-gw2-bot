@@ -34,3 +34,9 @@ This project is licensed under the MIT License. See the (LICENSE) file for detai
 ## Disclaimer
 
 Tatyana is an independent community project and is not affiliated with or endorsed by ArenaNet or Guild Wars 2.
+
+## Privacy
+
+Tatyana stores Discord User IDs and attendance responses so authorised guild organisers can see who has indicated that they are interested in a Guild Mission.
+
+For more information, see [PRIVACY.md](PRIVACY.md).
