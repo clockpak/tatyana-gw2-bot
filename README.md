@@ -2,6 +2,11 @@
 
 A Discord bot for Guild Wars 2 guild mission coordination.
 
+## Documentation
+
+- [Commands](COMMANDS.md) — Available commands and their usage
+- [Privacy](PRIVACY.md) — Information about data collection and storage
+
 ## Features
 
 * Guild Mission interest polls
