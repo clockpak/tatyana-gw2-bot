@@ -14,7 +14,7 @@ A Discord bot for Guild Wars 2 guild mission coordination.
 * Guild Mission interest polls
 * Interested / Maybe / Can't Attend responses
 * Attendance tracking
-* Mission dates and times in customizable time zones
+* Mission dates and times in AWST
 * Guild Mission type and difficulty selection
 * Guild Favor and Commendation tracking
 * Persistent mission data
