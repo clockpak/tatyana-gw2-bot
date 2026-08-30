@@ -1,6 +1,6 @@
 # Tatyana — Privacy Notice
 
-**Last updated:** 29 August 2026
+**Last updated:** 30th August 2026
 
 Tatyana is a Discord bot designed to help Guild Wars 2 guilds coordinate Guild Missions and track attendance.
 
