@@ -9,13 +9,25 @@ A Discord bot for Guild Wars 2 guild mission coordination.
 
 ## Features
 
+### Guild Missions
+
 * Guild Mission interest polls
 * Interested / Maybe / Can't Attend responses
 * Attendance tracking
 * Mission dates and times in customizable time zones
-* Guild mission type and difficulty
+* Guild Mission type and difficulty selection
 * Guild Favor and Commendation tracking
 * Persistent mission data
+
+### Server Management
+
+* `/say` command for authorized staff to send messages through Tatyana
+* `/update` command for authorized staff to post official server updates
+* Custom update sources, including Carrd, GitHub, Discord, Guild, Bot, and more
+* Optional links for update announcements
+* Automatic update icons based on the source
+* Role-based command permissions
+* Server owner permission override
 
 ## Requirements
 
