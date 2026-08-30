@@ -33,8 +33,8 @@ tree = app_commands.CommandTree(bot)
 # Anyone with ANY of these roles can use them.
 
 ALLOWED_ROLES = [
-    "Mentally ill CEO (Guild leader)"
-    "Mentally ill officer (Guild officer)"
+    "Mentally ill CEO (Guild leader)",
+    "Mentally ill officer (Guild officer)",
     "Mentally ill captain (captain)",
     "Mentally ill veteran (Veteran)",
 ]
@@ -390,6 +390,91 @@ async def say(
     # Send the actual message as the bot
     await interaction.channel.send(
         message
+    )
+
+
+# ============================================================
+# /UPDATE
+# ============================================================
+
+@tree.command(
+    name="update",
+    description="Post an official MIGC update",
+    guild=GUILD
+)
+@app_commands.describe(
+    source="What is being updated? (e.g. Carrd, GitHub, Guild, Bot)",
+    changes="Describe what has been updated",
+    link="Optional link to the updated content"
+)
+async def update(
+    interaction: discord.Interaction,
+    source: str,
+    changes: str,
+    link: str = ""
+):
+
+    # Check permissions
+    if not await check_permissions(interaction):
+        return
+
+    # Choose an emoji based on the source
+    # Sources are still completely free-text.
+    source_emojis = {
+        "carrd": "🌐",
+        "website": "🌐",
+        "github": "💻",
+        "bot": "🤖",
+        "discord": "💬",
+        "guild": "🏰",
+        "events": "📅",
+        "event": "📅",
+        "rules": "📜",
+        "documentation": "📚",
+        "docs": "📚"
+    }
+
+    emoji = source_emojis.get(
+        source.lower().strip(),
+        "📢"
+    )
+
+    # Create the update embed
+    embed = discord.Embed(
+        title=f"{emoji} MIGC Update",
+        description=changes
+    )
+
+    # Show the source
+    embed.add_field(
+        name="📌 Source",
+        value=source,
+        inline=False
+    )
+
+    # Add a clickable link if one was provided
+    if link.strip():
+
+        embed.add_field(
+            name="🔗 View Update",
+            value=f"[Open Link]({link.strip()})",
+            inline=False
+        )
+
+    # Show who posted the update
+    embed.set_footer(
+        text=f"Update posted by {interaction.user.display_name}"
+    )
+
+    # Send the actual announcement
+    await interaction.channel.send(
+        embed=embed
+    )
+
+    # Private confirmation
+    await interaction.response.send_message(
+        "✅ Update posted!",
+        ephemeral=True
     )
 
 
