@@ -74,6 +74,13 @@ Tatyana will repeat what you say through the command while deleting the original
 
 ---
 
+### `/update`
+
+Displays a message with what has been typed into the source, changes made and (optional) link if needed,
+<img width="549" height="228" alt="image" src="https://github.com/user-attachments/assets/586d26b2-958d-412c-bd2d-c015f0c894ed" />
+
+---
+
 ## Permissions
 
 Tatyana is intended to be used by small, casual Guild Wars 2 communities.
